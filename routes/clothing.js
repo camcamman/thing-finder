@@ -16,3 +16,5 @@ const clothing = [
 clothingRoutes.get("/", (req, res) => {
     res.send(clothing)
 })
+
+module.exports = clothingRoutes
