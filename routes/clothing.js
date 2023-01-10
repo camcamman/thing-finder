@@ -1,5 +1,5 @@
 const express = require("express")
-const clothingRoutes = express.Router()
+const clothingRouter = express.Router()
 
 const clothing = [
     {
@@ -13,8 +13,8 @@ const clothing = [
     }
 ]
 
-clothingRoutes.get("/", (req, res) => {
+clothingRouter.get("/", (req, res) => {
     res.send(clothing)
 })
 
-module.exports = clothingRoutes
+module.exports = clothingRouter

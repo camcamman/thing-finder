@@ -1,5 +1,5 @@
 const express = require("express")
-const toyRoutes = express.Router()
+const toyRouter = express.Router()
 
 const toyArry = [
     {
@@ -13,8 +13,9 @@ const toyArry = [
     }
 ]
 
-toyRoutes.get("/", (req, res) => {
+toyRouter.get("/", (req, res) => {
     res.send(toyArry)
 })
 
-module.exports = toyRoutes
+module.exports = toyRouter
+

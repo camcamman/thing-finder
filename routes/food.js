@@ -17,8 +17,16 @@ const food = [
     }
 ]
 
+//get all
 foodRouter.get("/", (req, res) => {
     res.send(food)
+})
+
+//get one 
+foodRouter.get("/:name", (req, res) => {
+    const foodName = req.query.name
+    const filteredFood = food.filter(food => food.name === foodName)
+    res.send(filteredFood)
 })
 
 module.exports = foodRouter
