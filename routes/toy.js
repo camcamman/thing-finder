@@ -13,8 +13,16 @@ const toyArry = [
     }
 ]
 
+//get all 
 toyRouter.get("/", (req, res) => {
     res.send(toyArry)
+})
+
+//get one 
+toyRouter.get("/:name", (req, res) => {
+    const toyName = req.query.name
+    const filteredtoy = toyArry.filter(toy => toy.name === toyName)
+    res.send(filteredtoy)
 })
 
 module.exports = toyRouter

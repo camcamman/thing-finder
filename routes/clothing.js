@@ -13,8 +13,16 @@ const clothing = [
     }
 ]
 
+//get all
 clothingRouter.get("/", (req, res) => {
     res.send(clothing)
+})
+
+//get one 
+clothingRouter.get("/:name", (req, res) => {
+    const clothingName = req.query.name
+    const filteredClothing = clothing.filter(clothing => clothing.name === clothingName)
+    res.send(filteredClothing)
 })
 
 module.exports = clothingRouter
